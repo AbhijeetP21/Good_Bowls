@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { Fragment } from 'react/cjs/react.production.min';
 import { API_BASE_URL } from '../../config/api';
-import success from '../../images/success.png';
+import { Box, Icon, VStack, Heading, Button } from '@chakra-ui/react';
+import { CheckCircle } from 'phosphor-react';
 import styles from './styles.module.css';
 
 const EmailVerify = () => {
@@ -28,17 +29,15 @@ const EmailVerify = () => {
 	return (
 		<Fragment>
 			{validUrl ? (
-				<div className={styles.container}>
-					<img
-						src={success}
-						alt='success_img'
-						className={styles.success_img}
-					/>
-					<h1>Email verified successfully</h1>
-					<Link to='/login'>
-						<button className={styles.green_btn}>Login</button>
-					</Link>
-				</div>
+				<Box className={styles.container} textAlign="center" py={10}>
+					<VStack spacing={6}>
+						<Icon as={CheckCircle} w={24} h={24} color="green.500" weight="fill" />
+						<Heading size="lg" color="gray.700">Email verified successfully</Heading>
+						<Link to='/login'>
+							<Button colorScheme="green" size="lg">Login</Button>
+						</Link>
+					</VStack>
+				</Box>
 			) : (
 				<h1>404 Not Found</h1>
 			)}
@@ -47,3 +46,4 @@ const EmailVerify = () => {
 };
 
 export default EmailVerify;
+
