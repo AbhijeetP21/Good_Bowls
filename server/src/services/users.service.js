@@ -26,9 +26,9 @@ const usersService = {
     const salt = await bcrypt.genSalt(env.SALT_ROUNDS);
     const hashedPassword = await bcrypt.hash(userData.password, salt);
 
-    // In development, auto-verify users (skip email)
-    const isDevelopment = env.NODE_ENV !== 'production';
-    const skipEmailVerification = isDevelopment || !env.RESEND_API_KEY;
+    // Skip email verification for demo (Resend free tier limitation)
+    // Email verification is implemented but requires a verified domain to send to other recipients
+    const skipEmailVerification = true;
 
     // Create user
     const user = await userRepository.create({

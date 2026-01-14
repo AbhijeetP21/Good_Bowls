@@ -21,6 +21,8 @@ Node.js and Express server with MongoDB Atlas for the database. Stripe API for p
 
 Browse a menu of signature salad bowls with different sizes and pricing. Build your own custom bowl by selecting a base, toppings, cheese, and sauces. Add items to cart and manage quantities. Secure checkout with Stripe test payments. User authentication with email verification. Order history for logged in users. Admin dashboard for managing bowls, orders, and users.
 
+Note: Email verification functionality is fully implemented using Resend. However, the free tier only allows sending emails to verified domains. For this demo, email verification is disabled to allow immediate account access. To enable it, add a verified domain in Resend and update the server code.
+
 ## Local Development
 
 ### Prerequisites
