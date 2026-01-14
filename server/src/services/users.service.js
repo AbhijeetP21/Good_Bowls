@@ -28,7 +28,7 @@ const usersService = {
 
     // In development, auto-verify users (skip email)
     const isDevelopment = env.NODE_ENV !== 'production';
-    const skipEmailVerification = isDevelopment || !env.EMAIL_USER || env.EMAIL_USER === 'skip@gmail.com';
+    const skipEmailVerification = isDevelopment || !env.RESEND_API_KEY;
 
     // Create user
     const user = await userRepository.create({
@@ -40,9 +40,9 @@ const usersService = {
     // Skip email in development or if email not configured
     if (skipEmailVerification) {
       console.log('📧 Email verification skipped (development mode)');
-      return { 
+      return {
         message: 'Account created successfully! You can now login.',
-        skipVerification: true 
+        skipVerification: true
       };
     }
 
