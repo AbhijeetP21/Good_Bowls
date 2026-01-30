@@ -2,6 +2,8 @@
 
 A full stack web application for a modern salad bowl restaurant. Customers can browse the menu, customize their own bowls, and complete orders with secure Stripe payment integration.
 
+Read the detailed Technical write-up here: https://www.abhijeetpachpute.com/writing/good-bowls-ecommerce
+
 ## Live Demo
 
 The application is deployed on free tier hosting services. Please note that the initial load may take up to 50 seconds as the servers wake up from sleep mode. Local builds or paid hosting deployments load instantly.
